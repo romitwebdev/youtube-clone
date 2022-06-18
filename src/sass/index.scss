@@ -1,0 +1,23 @@
+// variables
+@import "variables";
+
+// base
+@import "base.scss";
+
+// layout
+@import "breakpoint";
+@import "container";
+@import "flexItems";
+
+// components
+@import "home";
+@import "navbar";
+@import "navlogo";
+@import "searchbar";
+@import "navitems";
+@import "categoryBar";
+@import "categoryItems";
+@import "content";
+@import "card";
+@import "footer";
+@import "sidebar";

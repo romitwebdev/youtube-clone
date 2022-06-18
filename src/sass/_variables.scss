@@ -1,0 +1,30 @@
+// colors
+$dark-primary-color: hsl(0, 0%, 13%);
+$dark-secondary-color: hsl(0, 0%, 9%);
+$dark-fade-color: hsl(0, 0%, 20%);
+$light-primary-color: hsl(0, 0%, 98%);
+$light-secondary-color: hsl(0, 0%, 100%);
+$light-fade: hsl(0, 0%, 95%);
+$lighter-fade: rgb(217, 217, 217);
+$extra-light-fade: rgb(249, 249, 249);
+$lowest-light: hsl(0, 1%, 26%);
+$lowest-light-secondary: hsl(0, 0%, 70%);
+
+// font size
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.5;
+$font-size-md: $base-font-size;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+
+// margin
+$base-margin: 1rem;
+
+// padding
+$base-padding: 1rem;
+
+// box shadow
+$base-box-shadow: 1px 1px 5px hsla(0, 0%, 13%, 0.4);
+
+// base radius
+$base-radius: 1rem;

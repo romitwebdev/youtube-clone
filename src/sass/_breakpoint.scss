@@ -1,0 +1,18 @@
+// create breakpoint on each screen size
+
+// screen sizes
+$breakpoints: (
+    "xs": 0,
+    "sm": 480px,
+    "md": 710px,
+    "lg": 960px,
+    "xl": 1200px,
+);
+
+// mixin takes argument of diffenent screen size and declaration is placed in content
+
+@mixin breakpoint($bp) {
+    @media screen and (min-width: map-get($breakpoints, $bp)) {
+        @content;
+    }
+}

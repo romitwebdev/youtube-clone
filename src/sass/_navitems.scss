@@ -1,0 +1,55 @@
+// flex the navbar content
+.nav-content-holder {
+    @include flex-items(center, center);
+
+    // flex the nav items in navbar
+    .nav-items-holder {
+        @include flex-items();
+
+        // style for icons of the navbar
+        .nav-icon {
+            font-size: $font-size-lg;
+            font-weight: lighter;
+            margin-right: $base-margin * 0.5;
+            cursor: pointer;
+
+            &.dark-theme {
+                color: $light-primary-color;
+            }
+        }
+    }
+
+    // style for profile icon in navbar makes it round
+    .nav-profile-holder {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+}
+
+@include breakpoint("lg") {
+    .nav-content-holder {
+        .nav-items-holder {
+            // increase the margin on bigger screen
+            .nav-icon {
+                margin-right: $base-margin * 1.5;
+                &.grid-menu {
+                    font-size: $font-size-lg * 0.9;
+                }
+            }
+        }
+
+        // increase the size of profile icon on bigger screen
+        .nav-profile-holder {
+            width: 35px;
+            height: 35px;
+        }
+    }
+}

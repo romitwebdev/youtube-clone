@@ -1,0 +1,104 @@
+// style for searchbar holder
+.search-bar-holder {
+    .form-search {
+        @include flex-items();
+        width: 600px;
+        height: 40px;
+        // style for input box
+        .search-input-holder {
+            // @include flex-items(flex-start, space-between);
+            width: 100%;
+            height: 100%;
+            position: relative;
+            .search {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+                border: none;
+                outline: none;
+                padding-left: 9px;
+                font-size: $font-size-md * 1.05;
+                border: 1px solid $lighter-fade;
+                border-radius: 3px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                background-color: $extra-light-fade;
+
+                &.dark-theme {
+                    background-color: $dark-secondary-color;
+                    border-color: $lowest-light;
+                }
+
+                &:focus {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                    border: 1px solid rgb(10, 118, 233);
+                    border-left: none;
+                    padding-left: 10px; //padding is increase 1px because border left is set to none
+                    border-radius: 0;
+                }
+            }
+
+            // style for search icon on left side of search bar
+            .search-input-icon {
+                position: absolute;
+                top: 0;
+                right: 100%;
+                width: 35px;
+                height: 100%;
+                background-color: $extra-light-fade;
+                border: 1px solid rgb(10, 118, 233);
+                border-right: none;
+                padding: 8px;
+                padding-right: 0;
+                border-radius: 3px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+
+                &.dark-theme {
+                    background-color: $dark-secondary-color;
+                    color: $light-primary-color;
+                }
+            }
+        }
+
+        // style for search icon on right side of search bar
+        .search-icon-holder {
+            @include flex-items();
+            height: 100%;
+            padding: $base-padding * 0.2 $base-padding * 0.7;
+            font-size: $font-size-lg;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            background-color: $extra-light-fade;
+            border: 1px solid $lighter-fade;
+            border-left: none;
+            cursor: pointer;
+
+            &.dark-theme {
+                background-color: $lowest-light;
+                color: $light-primary-color;
+                border-color: $lowest-light;
+            }
+        }
+
+        // style for mic icon
+        .mic-icon-holder {
+            @include flex-items();
+            width: 50px;
+            height: 40px;
+            border-radius: 100%;
+            background-color: $lighter-fade;
+            margin-left: $base-margin * 0.5;
+            cursor: pointer;
+
+            &.dark-theme {
+                background-color: $dark-secondary-color;
+                color: $light-primary-color;
+            }
+        }
+    }
+}
+
+@include breakpoint("lg") {
+}

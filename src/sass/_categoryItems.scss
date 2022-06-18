@@ -1,0 +1,21 @@
+// style for category items
+.cat-items-holder {
+    display: inline-block;
+    padding: $base-padding * 0.4 $base-padding * 0.7;
+    border-radius: $base-radius;
+    // background-color: $light-fade;
+    border: 1px solid $lighter-fade;
+    cursor: pointer;
+
+    &.dark-theme {
+        background-color: $dark-fade-color;
+        color: $light-primary-color;
+        border-color: $lowest-light;
+
+        // &:first-child {
+        //     // background-color: $lighter-fade;
+        //     background-color: red;
+        //     color: $light-primary-color;
+        // }
+    }
+}

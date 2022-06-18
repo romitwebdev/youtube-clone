@@ -1,0 +1,24 @@
+// style for footer holder
+.footer-holder {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $light-secondary-color;
+    padding: $base-padding * 0.7 0;
+    border-top: 1px solid $lighter-fade;
+    &.dark-theme {
+        background-color: $dark-primary-color;
+        color: $light-primary-color;
+    }
+    @include flex-items(space-around, center);
+    .footer-items {
+        @include flex-items();
+        flex-direction: column;
+        .footer-icons {
+            font-size: $font-size-md * 1.4;
+        }
+        p {
+            font-size: $font-size-md * 0.688;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.home {
+    // style to make content and side bare flex
+    .sidebar {
+        @include flex-items(flex-start, flex-start);
+    }
+
+    // style for the category bar
+    .category-bar-container {
+        width: 100%;
+        background-color: $light-fade;
+        z-index: 1;
+        position: fixed;
+        top: 8vh;
+        left: 0%;
+        transition: all 0.3s ease;
+        &.hide-bar {
+            top: -20%;
+        }
+        &#move-category-bar {
+            left: 17%;
+        }
+    }
+}
+
+// style for larger screen
+@include breakpoint("lg") {
+    .home {
+        .category-bar-container {
+            border-top: 1px solid $lighter-fade;
+            top: 8vh;
+            left: 6%;
+            transition: none;
+            &.hide-bar {
+                top: 8vh;
+            }
+            &.dark-theme {
+                border-top-color: $lowest-light;
+            }
+        }
+    }
+}

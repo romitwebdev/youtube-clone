@@ -1,0 +1,116 @@
+// flex the category holder container, so it can be appear in a straight bar
+.category-holder {
+    @include flex-items(flex-start, center);
+    width: auto;
+    border-bottom: 1px solid $lighter-fade;
+    font-size: $font-size-md * 0.875;
+    padding: $base-padding * 0.6 0;
+    position: relative;
+    background-color: $light-fade;
+
+    &.dark-theme {
+        background-color: $dark-primary-color;
+        border-color: $lowest-light;
+    }
+
+    // style for left and righ arrow
+    .arrow-container {
+        position: absolute;
+        right: 0%;
+        top: 50%;
+        height: 100%;
+        width: 90px;
+        transform: translateY(-50%);
+        background: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 65%,
+            rgba(255, 255, 255, 0.7) 85%,
+            rgba(255, 255, 255, 0.2) 100%
+        );
+        @include flex-items();
+
+        &.dark-theme {
+            background: linear-gradient(
+                to left,
+                rgba(0, 0, 0, 0.9) 65%,
+                rgba(0, 0, 0, 0.7) 85%,
+                rgba(0, 0, 0, 0.2) 100%
+            );
+
+            color: $light-primary-color;
+        }
+
+        .arrow {
+            font-size: $font-size-lg;
+            cursor: pointer;
+        }
+    }
+    .arrow-container.left {
+        // left: -1%;
+        left: 0;
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 65%,
+            rgba(255, 255, 255, 0.7) 85%,
+            rgba(255, 255, 255, 0.2) 100%
+        );
+
+        &.dark-theme {
+            background: linear-gradient(
+                to left,
+                rgba(0, 0, 0, 0.2) 65%,
+                rgba(0, 0, 0, 0.7) 85%,
+                rgba(0, 0, 0, 0.9) 100%
+            );
+
+            color: $light-primary-color;
+        }
+    }
+
+    // style for explore title holder
+    .cat-explore-holder {
+        .explore-container {
+            padding: 0 $base-padding;
+            border-right: 1px solid $lighter-fade;
+
+            .cat-explore-title {
+                @include flex-items();
+                padding: $base-padding * 0.3 $base-padding * 0.5;
+                background: $lighter-fade;
+                &.dark-title {
+                    background-color: $dark-fade-color;
+                    color: $light-primary-color;
+                }
+                .cat-explore-logo {
+                    font-size: $font-size-lg * 0.9;
+                    margin-right: $base-margin * 0.3;
+                }
+            }
+        }
+    }
+
+    .category-list-holder {
+        @include flex-items(flex-start, center);
+        gap: $base-padding * 0.7;
+        overflow-x: scroll;
+        width: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+// style for larger screen
+@include breakpoint("lg") {
+    .category-holder {
+        width: 94%;
+
+        &.active {
+            width: 83%;
+        }
+        .category-list-holder {
+            // padding-left: $base-padding * 0.7;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+// mixin for displaying items in flex
+
+@mixin flex-items($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}

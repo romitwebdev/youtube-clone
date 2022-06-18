@@ -1,0 +1,17 @@
+// add padding on left and right of the element
+
+.container {
+    display: block;
+    width: 100%;
+    max-width: 1500px;
+    padding: 0 $base-padding * 0.5;
+    margin: 0 auto;
+}
+
+// increase the size of left and right paading on bigger screen size
+
+@include breakpoint("lg") {
+    .container {
+        padding: 0 $base-padding * 2;
+    }
+}
