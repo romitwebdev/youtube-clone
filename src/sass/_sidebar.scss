@@ -33,9 +33,17 @@
             &.additional {
                 border-top: 1px solid $lighter-fade;
                 border-bottom: 1px solid $lighter-fade;
+
+                &.dark-theme {
+                    border-top-color: $dark-fade-color;
+                    border-bottom-color: $dark-fade-color;
+                }
             }
             &.last-items {
                 border-bottom: 1px solid $lighter-fade;
+                &.dark-theme {
+                    border-bottom-color: $dark-fade-color;
+                }
             }
 
             .sidebar-items {

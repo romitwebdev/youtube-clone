@@ -22,7 +22,13 @@ const SearchBar = (): JSX.Element => {
             <div className="search-bar-holder">
                 <form action="">
                     <div className="form-search">
-                        <div className="search-input-holder">
+                        <div
+                            className={
+                                darkTheme
+                                    ? "search-input-holder dark-theme"
+                                    : "search-input-holder"
+                            }
+                        >
                             {searchFocused ? (
                                 <IconContext.Provider
                                     value={{

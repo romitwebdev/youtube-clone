@@ -37,6 +37,12 @@
                     padding-left: 10px; //padding is increase 1px because border left is set to none
                     border-radius: 0;
                 }
+                &.dark-theme {
+                    color: $light-primary-color;
+                    &::-webkit-search-cancel-button {
+                        background-color: red;
+                    }
+                }
             }
 
             // style for search icon on left side of search bar

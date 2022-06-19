@@ -1,9 +1,9 @@
 import React from "react";
-import { AiFillHome } from "react-icons/ai";
 import { MdOutlineSubscriptions, MdOutlineVideoLibrary } from "react-icons/md";
 import { SiYoutubegaming } from "react-icons/si";
 import { IconContext } from "react-icons";
 import { ContextFunc } from "../../ContextProvider";
+import { VscHome } from "react-icons/vsc";
 
 const Footer = (): JSX.Element => {
     const { darkTheme } = ContextFunc();
@@ -20,7 +20,7 @@ const Footer = (): JSX.Element => {
             >
                 <div className="footer-items">
                     <IconContext.Provider value={{ className: "footer-icons" }}>
-                        <AiFillHome />
+                        <VscHome />
                     </IconContext.Provider>
                     <p>Home</p>
                 </div>
