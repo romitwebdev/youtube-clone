@@ -514,7 +514,6 @@ body a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 0.7rem;
   overflow-x: scroll;
   width: 100%;
   scrollbar-width: none;
@@ -546,6 +545,7 @@ body a {
           flex-grow: 1;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  margin-left: 0.7rem;
 }
 
 .cat-items-holder.dark-theme {
@@ -688,11 +688,40 @@ body a {
 
 .card-holder .card-header-holder .title h3 {
   font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .card-holder .card-header-holder .title p {
   font-size: 0.75rem;
   margin-top: 0.3rem;
+}
+
+@media screen and (min-width: 350px) {
+  .card-holder .card-header-holder .title h3 {
+    font-size: 1.1rem;
+  }
+  .card-holder .card-header-holder .title p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .card-holder .card-header-holder .title h3 {
+    font-size: 1.3rem;
+  }
+  .card-holder .card-header-holder .title p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .card-holder .card-header-holder .title h3 {
+    font-size: 0.875rem;
+    font-size: 1rem;
+  }
+  .card-holder .card-header-holder .title p {
+    font-size: 0.75rem;
+  }
 }
 
 .footer-holder {

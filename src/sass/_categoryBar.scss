@@ -93,7 +93,7 @@
     .category-list-holder {
         @include flex-items(flex-start, center);
         flex-direction: row;
-        gap: $base-padding * 0.7;
+        // gap: $base-padding * 0.7;
         overflow-x: scroll;
         width: 100%;
         scrollbar-width: none;
