@@ -34,7 +34,7 @@
     }
 }
 
-@include breakpoint("lg") {
+@include breakpoint("xl") {
     .nav-content-holder {
         .nav-items-holder {
             // increase the margin on bigger screen

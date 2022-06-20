@@ -26,7 +26,13 @@
     }
 }
 
-@include breakpoint("lg") {
+@include breakpoint("md") {
+    .nav {
+        height: 6vh;
+    }
+}
+
+@include breakpoint("xl") {
     .nav {
         height: 8vh;
         box-shadow: none;

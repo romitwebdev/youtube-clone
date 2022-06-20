@@ -43,7 +43,7 @@
 }
 
 // style for larger screen
-@include breakpoint("lg") {
+@include breakpoint("xl") {
     .nav-logo-holder {
         margin-left: $base-margin * 2.45;
 

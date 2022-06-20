@@ -23,7 +23,16 @@
 }
 
 // style for larger screen
-@include breakpoint("lg") {
+
+@include breakpoint("md") {
+    .home {
+        .category-bar-container {
+            top: 6vh;
+        }
+    }
+}
+
+@include breakpoint("xl") {
     .home {
         .category-bar-container {
             border-top: 1px solid $lighter-fade;

@@ -89,29 +89,6 @@ const CategoryBar = (): JSX.Element => {
                         </div>
                     )}
                     <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
-                    <CategoryItems />
                 </div>
                 {desktopView ? (
                     <>

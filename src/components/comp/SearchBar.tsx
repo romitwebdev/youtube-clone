@@ -52,6 +52,7 @@ const SearchBar = (): JSX.Element => {
                                 className={
                                     darkTheme ? "search dark-theme" : "search"
                                 }
+                                autoComplete="off"
                             />
                         </div>
                         <div

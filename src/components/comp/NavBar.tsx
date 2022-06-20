@@ -25,14 +25,14 @@ const NavBar = (): JSX.Element => {
         window.onscroll = function () {
             handleScroll();
         };
-        if (window.innerWidth > 960) {
+        if (window.innerWidth > 1024) {
             setDesktopView(true);
         }
     });
 
     // function for toggling desktop view
     const desktopViewFunc = () => {
-        if (window.innerWidth > 960) {
+        if (window.innerWidth > 1024) {
             setDesktopView(true);
         } else {
             setDesktopView(false);

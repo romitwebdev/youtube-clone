@@ -2,6 +2,7 @@
 .category-holder {
     @include flex-items(flex-start, center);
     width: auto;
+    // overflow-x: contain;
     border-bottom: 1px solid $lighter-fade;
     font-size: $font-size-md * 0.875;
     padding: $base-padding * 0.6 0;
@@ -91,9 +92,11 @@
 
     .category-list-holder {
         @include flex-items(flex-start, center);
+        flex-direction: row;
         gap: $base-padding * 0.7;
         overflow-x: scroll;
         width: 100%;
+        scrollbar-width: none;
 
         &::-webkit-scrollbar {
             display: none;
@@ -102,7 +105,7 @@
 }
 
 // style for larger screen
-@include breakpoint("lg") {
+@include breakpoint("xl") {
     .category-holder {
         width: 94%;
 
@@ -110,7 +113,7 @@
             width: 83%;
         }
         .category-list-holder {
-            // padding-left: $base-padding * 0.7;
+            padding-left: $base-padding * 1.5;
         }
     }
 }
