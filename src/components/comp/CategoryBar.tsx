@@ -10,23 +10,31 @@ import {
 
 const CategoryBar = (): JSX.Element => {
     const [showRightArrow, setShowRightArrow] = React.useState<boolean>(true);
-    const [showLeftArrow, setShowLeftArrow] = React.useState<boolean>(true);
+    const [showLeftArrow, setShowLeftArrow] = React.useState<boolean>(false);
     const { desktopView, showFullSideBarMenu, darkTheme } = ContextFunc();
     let slideContainerRef = React.useRef<HTMLDivElement>(null!);
 
     const slideFunc = (args: string) => {
         if (slideContainerRef) {
             let scrollAmount = slideContainerRef.current.scrollLeft;
-            let maxScrollAmount = window.innerWidth;
+            let maxScrollAmount = slideContainerRef.current.scrollWidth;
 
-            if (scrollAmount >= maxScrollAmount) {
-                console.log(scrollAmount, maxScrollAmount);
+            console.log(args);
 
-                setShowRightArrow(false);
-            } else {
-                console.log("catsbar");
+            // console.log(scrollAmount, maxScrollAmount);
+            if (args === "left") {
+                setShowLeftArrow(true);
+                if (scrollAmount >= maxScrollAmount) {
+                    console.log(scrollAmount, maxScrollAmount);
+
+                    setShowRightArrow(false);
+                }
+            } else if (args === "right") {
+                setShowRightArrow(true);
+                if (scrollAmount <= 0) {
+                    setShowLeftArrow(false);
+                }
             }
-
             args === "left"
                 ? slideContainerRef.current.scrollTo({
                       top: 0,
@@ -92,36 +100,44 @@ const CategoryBar = (): JSX.Element => {
                 </div>
                 {desktopView ? (
                     <>
-                        <div
-                            className={
-                                darkTheme
-                                    ? "arrow-container left dark-theme"
-                                    : "arrow-container left"
-                            }
-                        >
-                            <div onClick={() => slideFunc("right")}>
-                                <IconContext.Provider
-                                    value={{ className: "arrow left" }}
-                                >
-                                    <MdOutlineKeyboardArrowLeft />
-                                </IconContext.Provider>
+                        {showLeftArrow ? (
+                            <div
+                                className={
+                                    darkTheme
+                                        ? "arrow-container left dark-theme"
+                                        : "arrow-container left"
+                                }
+                            >
+                                <div onClick={() => slideFunc("right")}>
+                                    <IconContext.Provider
+                                        value={{ className: "arrow left" }}
+                                    >
+                                        <MdOutlineKeyboardArrowLeft />
+                                    </IconContext.Provider>
+                                </div>
                             </div>
-                        </div>
-                        <div
-                            className={
-                                darkTheme
-                                    ? "arrow-container right dark-theme"
-                                    : "arrow-container right"
-                            }
-                        >
-                            <div onClick={() => slideFunc("left")}>
-                                <IconContext.Provider
-                                    value={{ className: "arrow right" }}
-                                >
-                                    <MdOutlineKeyboardArrowRight />
-                                </IconContext.Provider>
+                        ) : (
+                            ""
+                        )}
+                        {showRightArrow ? (
+                            <div
+                                className={
+                                    darkTheme
+                                        ? "arrow-container right dark-theme"
+                                        : "arrow-container right"
+                                }
+                            >
+                                <div onClick={() => slideFunc("left")}>
+                                    <IconContext.Provider
+                                        value={{ className: "arrow right" }}
+                                    >
+                                        <MdOutlineKeyboardArrowRight />
+                                    </IconContext.Provider>
+                                </div>
                             </div>
-                        </div>
+                        ) : (
+                            ""
+                        )}
                     </>
                 ) : (
                     ""

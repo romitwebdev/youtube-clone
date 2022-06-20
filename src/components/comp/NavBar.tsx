@@ -8,6 +8,12 @@ const NavBar = (): JSX.Element => {
     const { hideNav, setHideNav, desktopView, setDesktopView, darkTheme } =
         ContextFunc();
 
+    React.useEffect(() => {
+        darkTheme
+            ? document.body.classList.add("dark-theme")
+            : document.body.classList.remove("dark-theme");
+    });
+
     // hide and show the navbar
     const handleScroll = () => {
         if (
