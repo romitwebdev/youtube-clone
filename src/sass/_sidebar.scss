@@ -17,6 +17,7 @@
         left: 0;
         bottom: 0;
         overflow-y: scroll;
+        scrollbar-width: none;
         &.active {
             padding-right: $base-padding * 0.8;
         }

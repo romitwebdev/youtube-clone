@@ -802,6 +802,7 @@ body a {
   left: 0;
   bottom: 0;
   overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .sidebar-container .sidebar-items-container.active {
