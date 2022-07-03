@@ -34,7 +34,7 @@
 
 @include breakpoint("xl") {
     .nav {
-        height: 8vh;
+        height: $base-height;
         box-shadow: none;
         &.hide-nav {
             top: 0;

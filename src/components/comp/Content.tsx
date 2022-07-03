@@ -1,9 +1,11 @@
 import React from "react";
 import { ContextFunc } from "../../ContextProvider";
 import Card from "./Card";
+import CategoryBar from "./CategoryBar";
 
 const Content = (): JSX.Element => {
-    const { showFullSideBarMenu, darkTheme } = ContextFunc();
+    const { showFullSideBarMenu, darkTheme, desktopView, hideNav } =
+        ContextFunc();
 
     return (
         <>
@@ -20,6 +22,24 @@ const Content = (): JSX.Element => {
                         : "content-holder"
                 }
             >
+                <div
+                    id={
+                        desktopView && showFullSideBarMenu
+                            ? "move-category-bar"
+                            : ""
+                    }
+                    className={
+                        darkTheme
+                            ? hideNav
+                                ? "category-bar-container hide-bar dark-theme"
+                                : "category-bar-container dark-theme"
+                            : hideNav
+                            ? "category-bar-container hide-bar"
+                            : "category-bar-container"
+                    }
+                >
+                    <CategoryBar />
+                </div>
                 <div
                     className={
                         showFullSideBarMenu

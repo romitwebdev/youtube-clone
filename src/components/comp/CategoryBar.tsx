@@ -15,26 +15,13 @@ const CategoryBar = (): JSX.Element => {
     let slideContainerRef = React.useRef<HTMLDivElement>(null!);
 
     const slideFunc = (args: string) => {
+        console.log("fired");
+
         if (slideContainerRef) {
             let scrollAmount = slideContainerRef.current.scrollLeft;
-            let maxScrollAmount = slideContainerRef.current.scrollWidth;
+            let maxScrollWidth = slideContainerRef.current.scrollWidth;
+            let offsetWidth = slideContainerRef.current.offsetWidth;
 
-            console.log(args);
-
-            // console.log(scrollAmount, maxScrollAmount);
-            if (args === "left") {
-                setShowLeftArrow(true);
-                if (scrollAmount >= maxScrollAmount) {
-                    console.log(scrollAmount, maxScrollAmount);
-
-                    setShowRightArrow(false);
-                }
-            } else if (args === "right") {
-                setShowRightArrow(true);
-                if (scrollAmount <= 0) {
-                    setShowLeftArrow(false);
-                }
-            }
             args === "left"
                 ? slideContainerRef.current.scrollTo({
                       top: 0,
@@ -46,6 +33,18 @@ const CategoryBar = (): JSX.Element => {
                       left: (scrollAmount -= 150),
                       behavior: "smooth",
                   });
+
+            if (args === "left") {
+                setShowLeftArrow(true);
+                if (scrollAmount + offsetWidth >= maxScrollWidth) {
+                    setShowRightArrow(false);
+                }
+            } else if (args === "right") {
+                setShowRightArrow(true);
+                if (scrollAmount <= 0) {
+                    setShowLeftArrow(false);
+                }
+            }
         } else {
             console.log("slide container is undefine or null");
         }
@@ -108,7 +107,10 @@ const CategoryBar = (): JSX.Element => {
                                         : "arrow-container left"
                                 }
                             >
-                                <div onClick={() => slideFunc("right")}>
+                                <div
+                                    onWheel={() => slideFunc("right")}
+                                    onClick={() => slideFunc("right")}
+                                >
                                     <IconContext.Provider
                                         value={{ className: "arrow left" }}
                                     >
@@ -127,7 +129,10 @@ const CategoryBar = (): JSX.Element => {
                                         : "arrow-container right"
                                 }
                             >
-                                <div onClick={() => slideFunc("left")}>
+                                <div
+                                    onWheel={() => slideFunc("left")}
+                                    onClick={() => slideFunc("left")}
+                                >
                                     <IconContext.Provider
                                         value={{ className: "arrow right" }}
                                     >

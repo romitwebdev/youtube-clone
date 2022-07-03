@@ -1,125 +1,117 @@
 // style for sidebar holder
-.sidebar-container {
-    width: 6%;
-    height: 100%;
-    position: relative;
-    @include flex-items();
-    &.show-full-sidebar {
-        width: 17%;
+
+.sidebar-items-container {
+    background-color: $light-fade;
+    width: auto;
+    height: calc(100vh - #{$base-height});
+    position: sticky;
+    top: 8vh;
+    left: 0;
+    margin-top: 8vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    &.active {
+        padding-right: $base-padding * 0.8;
+        width: 20%;
+        min-width: 250px;
+    }
+    &.dark-theme {
+        background-color: $dark-primary-color;
+        color: $light-primary-color;
     }
 
-    .sidebar-items-container {
-        background-color: $light-fade;
-        width: inherit;
-        height: auto;
-        position: fixed;
-        top: 8vh;
-        left: 0;
-        bottom: 0;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        &.active {
-            padding-right: $base-padding * 0.8;
-        }
-        &.dark-theme {
-            background-color: $dark-primary-color;
-            color: $light-primary-color;
-        }
+    // padding and border on each item holder
 
-        // padding and border on each item holder
+    .sidebar-items-holder {
+        padding: $base-padding * 0.5 0;
 
-        .sidebar-items-holder {
-            padding: $base-padding * 0.5 0;
+        &.additional {
+            border-top: 1px solid $lighter-fade;
+            border-bottom: 1px solid $lighter-fade;
 
-            &.additional {
-                border-top: 1px solid $lighter-fade;
-                border-bottom: 1px solid $lighter-fade;
-
-                &.dark-theme {
-                    border-top-color: $dark-fade-color;
-                    border-bottom-color: $dark-fade-color;
-                }
+            &.dark-theme {
+                border-top-color: $dark-fade-color;
+                border-bottom-color: $dark-fade-color;
             }
-            &.last-items {
-                border-bottom: 1px solid $lighter-fade;
-                &.dark-theme {
-                    border-bottom-color: $dark-fade-color;
-                }
+        }
+        &.last-items {
+            border-bottom: 1px solid $lighter-fade;
+            &.dark-theme {
+                border-bottom-color: $dark-fade-color;
+            }
+        }
+
+        .sidebar-items {
+            // center the sidebar items
+
+            @include flex-items(center, center);
+            flex-direction: column;
+            cursor: pointer;
+            padding-top: $base-padding * 0.5;
+            padding-bottom: $base-padding * 0.5;
+            padding-left: $base-padding;
+            padding-right: $base-padding;
+            .sidebar-icons {
+                width: 54px;
             }
 
-            .sidebar-items {
-                // center the sidebar items
+            &:hover {
+                background-color: $lighter-fade;
+            }
+            &.dark-theme:hover {
+                background-color: $lowest-light;
+            }
+            // on showfullsidebar is true
 
-                @include flex-items(center, center);
-                flex-direction: column;
-                cursor: pointer;
-                padding-top: $base-padding * 0.5;
-                padding-bottom: $base-padding * 0.5;
-                padding-left: $base-padding;
-                padding-right: $base-padding;
-                .sidebar-icons {
-                    width: 54px;
+            &.show-full-sidebar {
+                @include flex-items(flex-start, center);
+                flex-direction: row;
+
+                p {
+                    font-size: $font-size-md * 0.8;
+                    margin-left: $base-margin * 1.5;
+                    margin-bottom: $base-margin * 0.4;
                 }
 
-                &:hover {
-                    background-color: $lighter-fade;
-                }
-                &.dark-theme:hover {
-                    background-color: $lowest-light;
-                }
-                // on showfullsidebar is true
+                // style for footer items
 
-                &.show-full-sidebar {
-                    @include flex-items(flex-start, center);
-                    flex-direction: row;
-
-                    p {
-                        font-size: $font-size-md * 0.8;
-                        margin-left: $base-margin * 1.5;
-                        margin-bottom: $base-margin * 0.4;
+                &.footer-items {
+                    flex-wrap: wrap;
+                    gap: 0;
+                    &:hover {
+                        background-color: $light-fade; //hides the color on hover on footer items
+                    }
+                    &.dark-theme {
+                        &:hover {
+                            background-color: $dark-primary-color;
+                        }
                     }
 
-                    // style for footer items
-
-                    &.footer-items {
+                    .footer-items-links {
+                        @include flex-items(flex-start, center);
                         flex-wrap: wrap;
-                        gap: 0;
-                        &:hover {
-                            background-color: $light-fade; //hides the color on hover on footer items
+                        gap: $base-margin * 0.5;
+
+                        margin-left: $base-margin;
+                        a {
+                            font-weight: 700;
+                            font-size: $font-size-md * 0.8;
+                            color: $dark-secondary-color;
                         }
                         &.dark-theme {
-                            &:hover {
-                                background-color: $dark-primary-color;
-                            }
-                        }
-
-                        .footer-items-links {
-                            @include flex-items(flex-start, center);
-                            flex-wrap: wrap;
-                            gap: $base-margin * 0.5;
-
-                            margin-left: $base-margin;
                             a {
-                                // margin-right: $base-padding * 0.4;
-                                font-weight: 700;
-                                font-size: $font-size-md * 0.8;
-                                color: $dark-secondary-color;
-                            }
-                            &.dark-theme {
-                                a {
-                                    color: $lowest-light-secondary;
-                                }
+                                color: $lowest-light-secondary;
                             }
                         }
                     }
                 }
-                .sidebar-icons {
-                    font-size: $font-size-lg;
-                    margin-bottom: $base-margin * 0.5;
-                }
-                p {
-                    font-size: $font-size-md * 0.65;
-                }
+            }
+            .sidebar-icons {
+                font-size: $font-size-lg;
+                margin-bottom: $base-margin * 0.5;
+            }
+            p {
+                font-size: $font-size-md * 0.65;
             }
         }
     }

@@ -1,20 +1,31 @@
 // style for content holder
 .content-holder {
-    padding-top: $base-padding * 5.5;
+    margin-top: $base-height;
     padding-bottom: $base-padding * 5;
+    width: 100%;
     height: auto;
     background-color: $extra-light-fade;
+    position: relative;
 
     &.dark-theme {
         background-color: $dark-secondary-color;
         color: $light-primary-color;
     }
+    .category-bar-container {
+        position: sticky;
+        z-index: 1;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: top 0.3s ease;
+        &.hide-bar {
+            top: -20%;
+        }
+    }
 }
 
 @include breakpoint("md") {
     .content-holder {
-        width: 100%;
-        // height: 100%;
         .content-items-holder {
             display: grid;
             grid-template-columns: repeat(auto-fit, 49%);
@@ -25,27 +36,19 @@
     }
 }
 
-@include breakpoint("md") {
-    .content-holder {
-        padding-top: $base-padding * 7;
-    }
-}
-
-@include breakpoint("lg") {
-    .content-holder {
-        padding-top: $base-padding * 8;
-    }
-}
-
 @include breakpoint("xl") {
     .content-holder {
-        width: 94%;
         height: 100vh;
         overflow: scroll;
-        padding-top: $base-padding * 5.5;
 
-        &.active {
-            width: 83%;
+        .category-bar-container {
+            border-top: 1px solid $lighter-fade;
+            &.hide-bar {
+                top: $base-height;
+            }
+            &.dark-theme {
+                border-top-color: $lowest-light;
+            }
         }
         .content-items-holder {
             display: grid;
@@ -53,20 +56,8 @@
             justify-content: center;
             align-items: flex-start;
             gap: $base-margin * 1.1;
-            margin: $base-margin * 1.8 $base-margin * 0.9;
+            margin: $base-margin $base-margin * 0.7;
             margin-left: 0;
         }
-    }
-}
-
-@include breakpoint("xxl") {
-    .content-holder {
-        padding-top: $base-padding * 8;
-    }
-}
-
-@include bp(1700px) {
-    .content-holder {
-        padding-top: $base-padding * 9;
     }
 }
