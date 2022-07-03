@@ -535,10 +535,15 @@ body a {
   left: 0;
   -webkit-transition: top 0.3s ease;
   transition: top 0.3s ease;
+  border-top: 1px solid #d9d9d9;
 }
 
 .content-holder .category-bar-container.hide-bar {
   top: -20%;
+}
+
+.content-holder .category-bar-container.dark-theme {
+  border-top-color: #434242;
 }
 
 @media screen and (min-width: 710px) {
@@ -561,9 +566,6 @@ body a {
   .content-holder {
     height: 100vh;
     overflow: scroll;
-  }
-  .content-holder .category-bar-container {
-    border-top: 1px solid #d9d9d9;
   }
   .content-holder .category-bar-container.hide-bar {
     top: 8vh;

@@ -18,8 +18,12 @@
         top: 0;
         left: 0;
         transition: top 0.3s ease;
+        border-top: 1px solid $lighter-fade;
         &.hide-bar {
             top: -20%;
+        }
+        &.dark-theme {
+            border-top-color: $lowest-light;
         }
     }
 }
@@ -42,7 +46,6 @@
         overflow: scroll;
 
         .category-bar-container {
-            border-top: 1px solid $lighter-fade;
             &.hide-bar {
                 top: $base-height;
             }
