@@ -34,6 +34,13 @@ const NavBar = (): JSX.Element => {
         if (window.innerWidth > 1024) {
             setDesktopView(true);
         }
+        let body = document.querySelector<HTMLBodyElement>("body");
+
+        if (desktopView) {
+            body!.style.overflow = "hidden";
+        } else {
+            body!.style.overflow = "scroll";
+        }
     });
 
     // function for toggling desktop view

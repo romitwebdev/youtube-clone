@@ -15,12 +15,17 @@ const SearchBar = (): JSX.Element => {
 
     const handleSearchBlur = () => setSearchFocused(false);
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        alert("Received Query");
+    };
+
     return (
         <>
             {/* logo image and text container */}
 
             <div className="search-bar-holder">
-                <form action="">
+                <form action="" onSubmit={(e) => handleSubmit(e)}>
                     <div className="form-search">
                         <div
                             className={
@@ -56,6 +61,7 @@ const SearchBar = (): JSX.Element => {
                             />
                         </div>
                         <div
+                            onClick={() => alert("Received Query")}
                             className={
                                 darkTheme
                                     ? "search-icon-holder dark-theme"

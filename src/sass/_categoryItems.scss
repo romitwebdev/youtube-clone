@@ -7,6 +7,9 @@
     flex-grow: 1;
     flex-shrink: 0;
     margin-left: $base-padding * 0.7;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
     &.dark-theme {
         background-color: $dark-fade-color;
         color: $light-primary-color;

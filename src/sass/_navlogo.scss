@@ -17,6 +17,9 @@
     .nav-logo-holder {
         @include flex-items(center, center);
         cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
 
         // style for nav logo image
         .nav-logo-img {

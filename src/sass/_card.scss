@@ -14,6 +14,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
         }
         .card-duration {
             position: absolute;
@@ -31,10 +34,14 @@
         @include flex-items(space-between, flex-start);
         margin-top: $base-margin * 0.5;
         gap: $base-margin;
+
         img {
             width: 45px;
             height: 45px;
             border-radius: 50%;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
         }
         .title {
             h3 {

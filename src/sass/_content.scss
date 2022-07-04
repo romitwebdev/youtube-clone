@@ -1,21 +1,22 @@
 // style for content holder
 .content-holder {
     margin-top: $base-height;
+    padding-top: $base-height;
     padding-bottom: $base-padding * 5;
     width: 100%;
-    height: auto;
     background-color: $extra-light-fade;
     position: relative;
+    height: auto;
 
     &.dark-theme {
         background-color: $dark-secondary-color;
         color: $light-primary-color;
     }
     .category-bar-container {
-        position: sticky;
+        position: fixed;
         z-index: 1;
         width: 100%;
-        top: 0;
+        top: $base-height;
         left: 0;
         transition: top 0.3s ease;
         border-top: 1px solid $lighter-fade;
@@ -42,10 +43,14 @@
 
 @include breakpoint("xl") {
     .content-holder {
+        padding-top: 0;
         height: 100vh;
         overflow: scroll;
 
         .category-bar-container {
+            position: sticky;
+            top: 0;
+
             &.hide-bar {
                 top: $base-height;
             }
